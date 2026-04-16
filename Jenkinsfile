@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git branch: 'main', url: 'https://github.com/D-Emerald/8.2CDevSecOps.git'
+        checkout scm
       }
     }
 
@@ -14,8 +14,8 @@ pipeline {
       }
     }
 
-    stage('Run Tests') {
-      steps {
+    stage('Run Tests') { 
+      steps { 
         sh 'npm test || true'
       }
     }
